@@ -1,0 +1,202 @@
+:root{
+  --frame-height: 85vh;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+header {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  background-color: #F8F8F8;
+  transition: background-color 500ms linear;
+}
+header[pos-x="12"], header[pos-x="13"], header[pos-x="14"] {
+  background-color: #333333;
+}
+#frameWrapper {
+  width: 100vw;
+  height: var(--frame-height);
+  display: flex;
+  align-items: center;
+}
+#headerWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#screenshotFrame {
+  flex: 0 0 calc(var(--frame-height) * 0.462);
+  width: calc(var(--frame-height) * 0.462);
+  height: var(--frame-height);
+  border-radius: calc(var(--frame-height) * 0.045);
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+}
+#backgroundContent {
+  position: absolute;
+  width: calc(var(--frame-height) * 0.462 * 15);
+  height: var(--frame-height);
+  top: 0;
+  display: flex;
+  background-image: url("../images/ScreenShotsForSite.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: left 500ms ease;
+  z-index: 0;
+}
+header[pos-x="0"] #backgroundContent {
+  left: 0;
+}
+header[pos-x="1"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -1);
+}
+header[pos-x="2"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -2);
+}
+header[pos-x="3"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -3);
+}
+header[pos-x="4"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -4);
+}
+header[pos-x="5"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -5);
+}
+header[pos-x="6"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -6);
+}
+header[pos-x="7"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -7);
+}
+header[pos-x="8"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -8);
+}
+header[pos-x="9"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -9);
+}
+header[pos-x="10"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -10);
+}
+header[pos-x="11"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -11);
+}
+header[pos-x="12"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -12);
+}
+header[pos-x="13"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -13);
+}
+header[pos-x="14"] #backgroundContent {
+  left: calc(var(--frame-height) * 0.462 * -14);
+}
+.oneScreen {
+  width: calc(var(--frame-height) * 0.462);
+  height: var(--frame-height);
+  font-size: calc(var(--frame-height) * 0.08);
+  line-height: 1.2em;
+  padding: 30px 3px;
+}
+.oneScreen span {
+  font-weight: 700;
+}
+
+#backgroundContent > .oneScreen:nth-child(13) {
+  color: #fff;
+}
+#frameShadow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(var(--frame-height) * 0.462);
+  height: var(--frame-height);
+  background-image: url("../images/frameShadow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  transition: background-image 0.5s;
+}
+header[pos-x="12"] #frameShadow, header[pos-x="13"] #frameShadow, header[pos-x="14"] #frameShadow {
+  background-image: url("../images/frameShadow-dark.png");
+  transition: background-image 0.5s;
+}
+.headerTopBot {
+  width: 100vw;
+  height: calc((100vh - var(--frame-height)) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#appTitle, #linkToAppStoreSection {
+  color: #079BE5; /* blue */
+  font-weight: 500;
+}
+header[pos-x="13"] #appTitle, header[pos-x="14"] #appTitle,
+header[pos-x="13"] #linkToAppStoreSection, header[pos-x="14"] #linkToAppStoreSection {
+  color: #FF4081; /* pink */
+}
+#linkToAppStoreSection {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#leftArrow, #rightArrow {
+  width: calc((100vw - var(--frame-height) * 0.462) / 2);
+  height: 40px;
+  color: #999;
+  font-size: 45px;
+  overflow: hidden;
+  cursor: pointer;
+}
+#rightArrow {
+  padding-left: 5px;
+}
+#leftArrow {
+  text-align: right;
+  padding-right: 5px;
+}
+
+section {
+  padding: 30px;
+}
+.botLine {
+  border-bottom: solid thin #eee;
+}
+.flexCenter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h3 {
+  font-size: 24px;
+  margin: 30px;
+}
+.sectionWrapper {
+  width: 90%;
+  max-width: 670px;
+  text-align: center;
+}
+#policyContent {
+  font-size: 18px;
+  line-height: 1.5em;
+}
+#appStoreBadge {
+  width: 100%;
+  height: 40px;
+  background-image: url("../images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg");
+  background-size: 120px 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+footer {
+  padding: 30px;
+  background-color: #ddd;
+  color: #666;
+}
